@@ -117,8 +117,10 @@ public class ConjuntoLibros {
         int comp=0;
         int mayor=0;
         int menor=0;
+        int comp1=10;
         
         for (int i = 0; i < ArregloLibros.length; i++) {
+            
             if(ArregloLibros[i]!=null){
                 int calificacion = ArregloLibros[i].getCalificacion();
                 if(calificacion>comp){
@@ -126,18 +128,22 @@ public class ConjuntoLibros {
                     comp=calificacion;
                 }
                 
-//                if(calificacion<comp){
-//                    menor=i;
-//                    comp=calificacion;
-//                
-//                }
-                
             }
         }
         
-        System.out.println("La poscion con el mayor es: "+mayor);
-        //System.out.println("La posicion del menor es: "+menor);
-        
+        for (int i = 0; i < ArregloLibros.length; i++) {
+            
+            if(ArregloLibros[i]!=null){
+                int calificacion = ArregloLibros[i].getCalificacion();
+                if(calificacion<comp1){
+                    menor=i;
+                    comp1=calificacion;
+                }
+            }
+        }
+        System.out.println("-----------");
+        System.out.println("El libro con mayor calificación es: "+" "+ArregloLibros[mayor].getTitulo()+" "+ArregloLibros[mayor].getAutor()+" "+ArregloLibros[mayor].getPaginas()+" "+ArregloLibros[mayor].getCalificacion());
+        System.out.println("El libro con menor calificación es: "+" "+ArregloLibros[menor].getTitulo()+" "+ArregloLibros[menor].getAutor()+" "+ArregloLibros[menor].getPaginas()+" "+ArregloLibros[menor].getCalificacion());
         
     
     }
